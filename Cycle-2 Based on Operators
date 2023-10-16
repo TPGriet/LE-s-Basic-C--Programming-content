@@ -1,1 +1,450 @@
+1. Write  a C program to implement Arithmetic Operators.
+Take two integers and find their 
+sum,difference,product,Quotient and Remainder
+
+Input Format: Read the inputs as two integers.
+Output Format : The output is sum,difference,product,Quotient and Remainder
+seperated by a space.
+Test Cases :
+-----------------------
+Case = t1
+input = 2 1
+output = 3 1 2 2 0 
+
+Case = t2
+input = 8 4
+output = 12 4 32 2 0
+
+Case = t3
+input = 0 2
+output = 2 -2 0 0 0 
+
+Case = t4
+fail message="Hidden test case"
+input = 18 25
+output = 43 -7 450 0 18
+
+Case = t5
+input = 20 3
+output = 23 17 60 6 2
+
+
+PROGRAM:
+-----------------------
+#include <stdio.h>
+
+int main() {
+    int num1, num2,sum,diff,prod,quo,rem;
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+     sum = num1 + num2;
+     diff = num1 - num2;
+     prod = num1 * num2;
+    
+    if (num2 != 0) 
+    {
+        quo = num1 / num2;
+        rem = num1 % num2;
+    } 
+    printf("%d %d %d %d %d\n", sum, diff, prod, quo, rem);
+    return 0;
+}
+
+2. Write  a C program to implement Relational Operators.Take two integers and find their relations
+in the order (greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to)
+Input Format: Read the inputs as two integers.
+Output Format : The output is either 0 0r 1
+seperated by a space.
+
+Test Cases :
+-------------------------
+Case = t1
+input = 12 61
+output = 0 0 1 1 0 1 
+
+Case = t2
+input = 10 4
+output = 1 1 0 0 0 1
+
+Case = t3
+input = 6 6
+output = 0 1 0 1 1 0 
+
+Case = t4
+input = 18 25
+output = 0 0 1 1 0 1
+
+Case = t5
+input = -20 3
+output = 0 0 1 1 0 1
+
+Case = t6
+fail message="Hidden test case"
+input = -15 -17
+output = 1 1 0 0 0 1
+
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+
+    int gt = (num1 > num2) ? 1 : 0;
+    int gte = (num1 >= num2) ? 1 : 0;
+    int lt = (num1 < num2) ? 1 : 0;
+    int lte = (num1 <= num2) ? 1 : 0;
+    int eq = (num1 == num2) ? 1 : 0;
+    int noteq = (num1 != num2) ? 1 : 0;
+
+    printf("%d %d %d %d %d %d\n", gt, gte, lt, lte, eq, noteq);
+
+    return 0;
+}
+
+3. Write  a C program to implement Logical Operators.
+Take two integers a,b and find the truthness of the following expressions.
+
+Logical AND -    a >5 && b !=3
+Logical OR -    a == 7 || b<= 10
+Logical NOT -   !(a==b)
+Logical NOT -   !(0)
+Logical NOT -   !(1)
+
+Input Format: Read the inputs as two integers into a,b.
+Output Format : The output is either 0 0r 1 in order asked seperated by a space.
+
+Test Cases :
+--------------------------------
+Case = t1
+input = 12 61
+output = 1 0 1 1 0
+
+Case = t2
+input = 10 4
+output = 1 1 1  1 0
+
+Case = t3
+input = -6 6
+output = 0 1 1 1 0 
+
+Case = t4
+Input = 3 5
+output = 0 1 1 1 0
+
+Case = t5
+fail message="Hidden test case"
+input = 10 20
+output = 1 0 1 1 0 
+
+
+Case = t6
+input = 2 2
+output = 0 1 0 1 0
+
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    
+    int and_result = (a > 5 && b != 3) ? 1 : 0;
+    int or_result = (a == 7 || b <= 10) ? 1 : 0;
+    int not_result1 = !(a == b) ? 1 : 0;
+    int not_result2 = !(0) ? 1 : 0;
+    int not_result3 = !(1) ? 1 : 0;
+
+    printf("%d %d %d %d %d\n", and_result, or_result, not_result1, not_result2, not_result3);
+
+    return 0;
+}
+
+4. Write  a C program to implement conditional Operators.
+Take two integers and find Largest of two numbers
+
+Input Format : Read two integers as input
+Output Format : Dispaly Big = Value of the bigger number
+
+Test Cases :
+-----------------------------
+Case = t1
+input = 12 61
+output = "Big = 61"
+
+Case = t2
+input = 10 4
+output = "Big = 10"
+
+Case = t3
+input = 6 0
+output ="Big = 6"
+
+Case = t4
+input = -97 78
+output = "Big = 78"
+
+Case = t5
+input = -20 -3
+output = "Big = -3"
+
+Case = t6
+fail message="Hidden test case"
+input = -15 -17
+output = "Big = -15"
+
+
+PROGRAM:
+-------------------------------------
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+
+    int big = (num1 > num2) ? num1 : num2;
+
+    printf("Big = %d\n", big);
+
+    return 0;
+}
+
+/*#include <stdio.h>
+
+int main() {
+    int num1, num2, num3;
+    scanf("%d %d %d", &num1, &num2, &num3);
+
+    int big = (num1 > num2) ? ((num1 > num3) ? num1 : num3) : ((num2 > num3) ? num2 : num3);
+
+    printf("Big = %d\n", big);
+
+    return 0;
+}*/
+
+5. Write  a C program to implement ASSIGNMNET Operators.
+Take two integers a and b and find the following.
+a+=b;
+a-=5;
+b*=3;
+a/=2;
+b%=4;
+
+Input Format : Read two integers a and b as input
+Output Format : Dispaly teh results of the operations as mentioned in order each one seperated by a space.
+
+Test Cases :
+-----------------------------
+Case = t1
+input = 10 20
+output = 30 25 60 12 0 
+
+Case = t2
+input = 2 4
+output = 6 1 12 0 0 
+
+Case = t3
+fail message="Hidden test case"
+Input = -2 4
+output = 2 -3 12 -1 0 
+
+PROGRAM:
+---------------------------------
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+
+     a += b;
+    printf("%d ", a);
+
+    a -= 5;
+    printf("%d ", a);
+
+    b *= 3;
+    printf("%d ", b);
+
+     a /= 2;
+    printf("%d ", a);
+
+     b %= 4;
+    printf("%d\n", b);
+
+    return 0;
+}
+
+
+6. Write  a C program to implement INCREMENT AND DECREMENT Operators.
+Take two integers a and b and find the following.
+C= a++;
+d= b--;
+e= ++b;
+f= --a;
+
+Input Format : Read two integers a and b as input
+Output Format : Dispaly the results of the operations as mentioned in order each one seperated by a new line except teh first one.
+
+Test Cases :
+----------------------------
+Case = t1
+Input = 10 20
+output =
+Post Increment c = 10 and a = 11                                                
+Post Decrement d = 20 and b = 19                                                
+Pre Increment e = 20 and b = 20                                                 
+Pre Decrement f = 10 and a = 10
+
+Case = t2
+input = 2 4
+output =                                                                             
+Post Increment c = 2 and a = 3                                                  
+Post Decrement d = 4 and b = 3                                                  
+Pre Increment e = 4 and b = 4                                                   
+Pre Decrement f = 2 and a = 2  
+
+Case = t3
+input = 2 -4
+output =Post Increment c = 2 and a = 3                                                  
+Post Decrement d = -4 and b = -5                                                
+Pre Increment e = -4 and b = -4                                                 
+Pre Decrement f = 2 and a = 2    
+
+Case = t4
+input = 0 0
+output =
+Post Increment c = 0 and a = 1                                                  
+Post Decrement d = 0 and b = -1                                                 
+Pre Increment e = 0 and b = 0                                                   
+Pre Decrement f = 0 and a = 0
+
+Case = t5
+fail message="Hidden test case"
+input = 2 -4
+output =Post Increment c = 2 and a = 3                                                  
+Post Decrement d = -4 and b = -5                                                
+Pre Increment e = -4 and b = -4                                                 
+Pre Decrement f = 2 and a = 2   
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+
+    int c, d, e, f;
+
+    // Post Increment
+    c = a++;
+    printf("Post Increment c = %d and a = %d\n", c, a);
+
+    // Post Decrement
+    d = b--;
+    printf("Post Decrement d = %d and b = %d\n", d, b);
+
+    // Pre Increment
+    e = ++b;
+    printf("Pre Increment e = %d and b = %d\n", e, b);
+
+    // Pre Decrement
+    f = --a;
+    printf("Pre Decrement f = %d and a = %d\n", f, a);
+    
+
+    return 0;
+}
+
+/*#include <stdio.h>
+int main()
+{
+         a=1;
+     c= a++ + ++a; 
+     //c = (++a) + (++a) + a++;
+    printf("C value is %d",c);
+    
+    
+     //b= a++ + a++ + a++ + a++ + a++;  
+    // b= ++a + ++a + ++a + ++a + a++;
+   // printf("a =%d \n b= %d",a,b);
+} */
+
+7. Write  a C program to implement BITWISE Operators.
+Take two integers and and apply all Bitwise opeartors in order - 
+ & , | , ^ , ~ , << , >>
+
+Input Format: Read the inputs as two integers.
+Output Format : The output is The RESULTANT OF the expressions a&b,a|b,a^b,~a,a<<2,b>>2 
+seperated in a new line.
+
+Test Cases :
+----------------------------------
+Input = 4 8
+output = 
+0                                                                               
+12                                                                              
+12                                                                              
+-5                                                                              
+16                                                                              
+2                                                                               
+ 
+
+Input = 10 5
+output = 
+0                                                                               
+15                                                                              
+15                                                                              
+-11                                                                             
+40                                                                              
+1 
+
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int result1 = a & b;
+    int result2 = a | b;
+    int result3 = a ^ b;
+    int result4 = ~a;
+    int result5 = a << 2;
+    int result6 = b >> 2;
+    printf("%d\n", result1);
+    printf("%d\n", result2);
+    printf("%d\n", result3);
+    printf("%d\n", result4);
+    printf("%d\n", result5);
+    printf("%d\n", result6);
+    return 0;
+}
+
+8. Write  a C program to implement SPECIAL Operators.
+Determine the sizes of the operator using size of operator - int,char,float,double,long double,long int. 
+
+Input Format: No input.
+Output Format : The sizes of datatypes int char float double long double and long int seperated by space. 
+
+Test Cases :
+------------------------
+Case = t1
+output = 4 1 4 8 16 8
+
+PROGRAM:
+--------------------------
+#include <stdio.h>
+int main() {
+    printf("%lu %lu %lu %lu %lu %lu\n", sizeof(int), sizeof(char), sizeof(float), sizeof(double), sizeof(long double), sizeof(long int));
+    return 0;
+}
+
+
 
