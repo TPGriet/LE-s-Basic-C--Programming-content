@@ -1,1 +1,494 @@
+1. Write a c program to print the message "Welcome to Training and placement Cell, C Course"
 
+Test Data and Expected Output :
+--------------------------
+case = t1
+Input : 
+output : "Welcome to Training and placement Cell, C Course"
+
+PROGRAM:
+ ----------------------
+#include<stdio.h>
+
+int main()
+{
+    printf("Welcome to training and placement cell, C Course");
+}
+
+2. Write a C program to add two integer numbers.
+
+Test Data and Expected Output :
+-------------------------
+Case = c1
+input = 2 5
+output = 7
+
+Case = c2
+input = 10 50
+output = 60
+
+Case = c3
+input = 2 -5
+output = -3
+
+Case = c4
+input = 200 185
+output = 385
+
+Case = c5
+fail message="Hidden test case"
+input = 0 0
+output = 0
+
+ PROGRAM:
+---------------------
+#include<stdio.h>
+int main()
+{
+    int x,y;
+    int sum;
+    scanf("%d%d",&x,&y);
+    sum=x+y;
+    printf("%d",sum);
+    
+    return 0;
+}
+
+3. Write  a C program to find area and perimeter of a circle.
+
+Test Cases :
+----------------------------
+Case = t1
+Input = 4
+output = 50.24 25.12
+
+Case =t2
+Input = 6 
+output = 113.04 37.68
+
+Case = t3
+Input = 11
+output = 379.94 69.08
+
+Case = t4
+Input = 20
+output = 1256.00 125.60
+
+Case = t5
+Input = 13
+output = 530.66 81.64
+
+Case = t6
+fail message="Hidden test case"
+Input = 0
+output = 0.00 0.00
+
+Input Format: Read one input as integer.
+Output Format : The output is two values area and perimeter seperated by a space.
+Note: take pi value as 3.14, use %.2f for displaying 2 digits after decimal.
+
+PROGRAM:
+------------------------
+#include <stdio.h>
+
+int main() {
+    float radius;
+    //printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+
+    float area = 3.14 * radius * radius; // Pi * r^2
+    float circumference = 2 * 3.14 * radius; // 2 * Pi * r
+
+    printf("%.2f %.2f\n", area, circumference);
+
+    return 0;
+}
+
+4. Write a C program to find lsa, tsa and volume of a cuboid.
+
+Test Cases :
+-----------------------
+Case = t1
+input = 2 1.5 6
+output=42.00 48.00 18.00
+
+Case = t2
+input = 15 10 8
+output = 400.00 700.00 1200.00
+
+Case = t3
+input = 2 3 7
+output = 70.00 82.00 42.00
+
+Case = t4
+input = 20 12 8
+output = 512.00 992.00 1920.00
+
+Case = t5
+fail message="hidden test case"
+input = 5 3 4
+output = 64.00 94.00 60.00
+
+case=t6
+input=45.5 23.6 78.2
+output=10807.24 12954.84 83971.16
+
+Input Format: Read length, breadth, height  from the user in float format.
+Output Format : Print lsa, tsa and volume of the cuboid respectively.
+truncate output to only 2 decimal places.
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+int main() {
+    float length, breadth, height;
+    float LSA, TSA, volume;
+
+    // printf("Enter the length of the cuboid: ");
+    scanf("%f", &length);
+
+    // printf("Enter the breadth of the cuboid: ");
+    scanf("%f", &breadth);
+
+    // printf("Enter the height of the cuboid: ");
+    scanf("%f", &height);
+
+    // Calculate Lateral Surface Area (LSA)
+    LSA = 2 * height * (length + breadth);
+
+    // Calculate Total Surface Area (TSA)
+    TSA = 2 * ((length * breadth) + (breadth * height) + (height * length));
+
+    // Calculate Volume
+    volume = length * breadth * height;
+
+    // Display the results
+    printf("%0.2f %0.2f %0.2f", LSA,TSA,volume);
+   
+
+    return 0;
+}
+
+
+5. Write  a C program to find area and perimeter of a right angled triangle.
+
+Test Case Example :
+---------------------
+Case = t1
+input = 3 4 5
+output ="Area: 6
+Perimeter: 12"
+
+Case = t2
+input = 5 12 13
+output = "Area: 30
+Perimeter: 30"
+
+Case = t3
+input = 65 72 97 
+output = "Area: 2340
+Perimeter: 234"
+
+case=t4
+input=5 7 90
+output="Input sides do not form a right-angled triangle."
+
+case=t5
+fail message="Hidden test case"
+input=4 6 9
+output="Input sides do not form a right-angled triangle."
+
+Input Format: Read the sides of the right angled triange as three inputs as integers in ascending order(pythagorean triples in ascending order).
+Output Format : The output is two values area and perimeter seperated by a space.
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int a, b, c;
+    int area, perimeter;
+
+    //printf("Enter the sides of the right-angled triangle (in ascending order): ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if(a * a + b * b == c * c)
+    {
+        area = 0.5 * a * b;
+        perimeter = a + b + c;
+
+        printf("Area: %d\n", area);
+        printf("Perimeter: %d", perimeter);
+    }
+    else 
+    {
+        printf("Input sides do not form a right-angled triangle.\n");
+    }
+
+
+6. Write  a C program to find the volume of a cone.
+use vol = pi*r*r*h/3.
+Input Format: Read the radius and height of the cone.
+Output Format : The output is the volume.
+Note: take pi value as 3.14, use %.2f for displaying 2 places after decimal.
+
+Test Cases :
+-----------------------
+Case = t1
+Input = 3 6
+output = 56.52
+
+Case = t2
+Input = 5 12
+output = 314.00
+
+Case = t3
+input = 0 0  
+output = 0.00 
+
+Case = t4
+input = 6 10 
+output = 376.80
+
+Case = t5
+input = 10 10 
+output = 1046.67
+
+Case = t6
+input = 5 3
+output = 78.50
+
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+#define pi 3.14
+
+int main()
+{
+    float radius, height, volume;
+
+    //printf("Enter the radius of the cone: ");
+    scanf("%f", &radius);
+
+   // printf("Enter the height of the cone: ");
+    scanf("%f", &height);
+
+    volume = (pi * radius * radius * height) / 3;
+
+
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+
+7. Write a C program to find the distance traversed by an object with an initial velocity 'u' and moving with constant acceleration 'a' in time period 't'.
+Input Format: Read the initial velocity, acceleration and time period.
+Output Format : The output is the distance traversed.
+
+Test Cases :
+------------------
+Input = 3 10 5 
+output = 140
+
+Input = 5 12 5
+output = 175
+
+
+PROGRAM:
+---------------------------------
+#include <stdio.h>
+
+int main()
+{
+    int u, a, t, distance;
+   // printf("Enter the initial velocity (u): ");
+    scanf("%d", &u);
+
+    //printf("Enter the constant acceleration (a): ");
+    scanf("%d", &a);
+
+    //printf("Enter the time period (t): ");
+    scanf("%d", &t);
+
+    distance = u * t + 0.5 * a * t * t;
+
+    printf("%d\n", distance);
+
+    return 0;
+}
+
+8. Write a C program to find the summation of n numbers.
+Input Format: Read the value for n.
+Output Format : The output is summation of n numbers.
+
+Test Cases :
+-------------------------
+Case = t1
+Input = 113
+output = 6441
+
+Case = t2
+Input = 100
+output = 5050
+
+Case = t3
+input = 0 
+output = 0
+
+Case = t4
+input = 99
+output = 4950
+
+Case = t5
+input = 11
+output = 66
+
+Case = t5
+fail message="Hidden test case"
+input = 32
+output = 528
+
+PROGRAM:
+--------------------------
+#include <stdio.h>
+
+int main() {
+    int n, sum;
+    scanf("%d", &n);
+
+    sum = n * (n + 1) / 2;
+
+    printf("%d\n",sum);
+
+    return 0;
+}
+
+
+9. Write  a C program to find the sum of squares of n natural numbers.
+
+Formula: n(n+1)(2n+1)/6
+Input Format: Read the input as an integer.
+Output Format : The output is the sum of squares of the natural numbers till the given number.
+
+Test Cases :
+----------------------
+Case = t1
+input = 2
+output = 5
+
+Case = t2
+input = 6
+output = 91
+
+Case = t3
+input = 0
+output = 0
+
+Case = t4
+input = 1
+output = 1
+
+Case = t5
+input = 3
+output = 14
+
+Case = t6
+fail message="Hidden test case"
+input = 4
+output = 30
+
+PROGRAM:
+----------------------
+#include <stdio.h>
+
+int main() {
+    int n, sum_of_squares;
+    scanf("%d", &n);
+    sum_of_squares = (n * (n + 1) * (2 * n + 1)) / 6;
+    printf("%d",sum_of_squares);
+
+    return 0;
+}
+
+10. Write  a C program to find the sum of cubes of n natural numbers.
+
+Formula: (n^2)*((n+1)^2)/4
+Input Format: Read the input as an integer.
+Output Format : The output is the sum of squares of the natural numbers till the given number.
+
+Test Cases :
+--------------------------
+Case = t1
+input = 2
+output = 9
+
+Case = t2
+input = 6
+output = 441
+
+Case = t3
+input = 0
+output = 0
+
+Case = t4
+input = 1
+output = 1
+
+Case = t5
+input = 3
+output = 36
+
+Case = t6
+fail message="Hidden test case"
+input = 4
+output = 100
+
+PROGRAM:
+-------------------------
+#include<stdio.h>
+int main()
+{
+    int n,sum;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    sum=(n*n)*((n+1)*(n+1))/4;
+    printf("%d",sum);
+}
+
+11. Write a C program to find BMI of a person.
+Input Format: Read weight(in kg) and height(in m) values of a person.
+Output Format : The output is the BMI, take %.4f for displaying four places after decimal.
+NOTE: weight and height should be taken as floats.
+
+Test Cases :
+-----------------------------
+Case = t1
+Input = 50.00 1.6 
+output = 19.5312
+
+Case = t2
+Input = 40.00 1.44
+output = 19.2901
+
+Case = t3
+fail message="Hidden test case"
+input = 55.00 1.50
+output = 24.4444
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+
+int main() {
+    float weight, height;
+    scanf("%f %f", &weight, &height);
+
+    float bmi = weight / (height * height);
+    
+    printf("%.4f\n", bmi);
+
+    return 0;
+}
